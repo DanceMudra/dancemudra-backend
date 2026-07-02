@@ -9,15 +9,9 @@ app.use(express.json());
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 465, // Yeh secure direct SSL port hai, free servers par best chalta hai
-  secure: true, // Ise true rakho kyunki 465 SSL use karta hai
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false // Isse connection strict security restrictions ki wajah se drop nahi hoga
   }
 });
 
